@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Mini Project 2</title>
+        <link rel="stylesheet" href="./style.css">
+        <script src="https://d3js.org/d3.v7.min.js"></script>
+    </head>
+    <body>
+        <div id="container">
+                
+            <div id="head">
+                <h1>Cities by Air Quality and Water Pollution Levels</h1> 
+            </div>
+
+            <div id="checkboxes">
+
+                <h5>Filter Cities by Pollution Levels</h5>
+
+                <button id="worstCities">cities with highest overall pollution </button>
+                <button id="bestCities">cities with lowest overall pollution</button>
+                <button id="moderateCities">cities with moderate pollution levels</button>
+
+                <!-- <div id="checks">
+                    <input type="checkbox" class="pollution--level" value="bestCities" checked>Lowest Overall Pollution<br>
+                    <input type="checkbox" class="pollution--level" value="worstCities" checked>Highest Overall Pollution<br>
+                    <input type="checkbox" class="pollution--level" value="moderateCities" checked>Moderate Pollution Levels<br>
+                </div> -->
+            </div>
+
+            <figure id="chart"></figure>
+
+            <div id="notes">
+                        <h2>Explanation</h2>
+                        <p>
+                            The dataset, "World Cities Air Quality and Water Pollution, 2020" was taken from <a target="blank" href="https://www.kaggle.com/cityapiio/world-cities-air-quality-and-water-polution">kaggle.com</a>.
+                            In the data, the measure for Air Quality varies from 0 (worst quality) to 100 (best quality). The measure for Water Pollution varies from 0 (best quality) to 100 (worst quality). 
+                            I created definitions in order to filter for cities with the highest and lowest overall pollution -- aka, <em></em>both their air and water falls into best or worst quality. Cities that don't fall into either best or worst overall are said to have moderate pollution. 
+                        <p>
+                        <p>
+                            The 3 filters and the parameters for their definitions are as follows:
+                            <ol>
+                                <li>
+                                    Cities with highest overall pollution: water pollution must be above 50 and air quality below 50.
+                                </li>
+                                <li>
+                                    Cities with lowest overall pollution: water pollution must be below 50 and air quality above 50.
+                                </li>
+                                <li>
+                                    Cities with moderate pollution levels. If a city has one "high" ranking and one "low" ranking for pollution levels (either air or water), it falls into the moderate category. 
+                                </li>
+                            </ol>
+                            The position of each circle on the scatterplot is encoded by Air Quality and Water Pollution levels. When hovering
+                            over a circle, the tooltip allows you to find out the location (city, region, and country) of that observation in the data.
+                            Based on this, it's possible to explore which cities have the highest, lowest, or moderate pollution levels. 
+                            Cities in the top right hand corner of the scatterplot would be considered the worst cities based on the pollution data, 
+                            while cities in the bottom left hand corner of the scatterplot would be considered the best cities based on the pollution data.
+                            I envision this as a useful tool for exploring cities that might be better or worse to live in/visit based on their pollution levels. 
+                            Darker circles indicate that more than one city has that exact value for water pollution and air quality. 
+                        </p>
+            </div>
+
+        </div>
+        <script src="./script.js"></script>
+    </body>
+</html>
